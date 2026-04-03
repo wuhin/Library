@@ -1,19 +1,21 @@
-function Book(title, author, pages, read) {
-  
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book {
     
-    this.id = crypto.randomUUID(); 
-
-    this.info = function() {
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
+    constructor(title, author, pages, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        
+        this.id = crypto.randomUUID(); 
     }
-}
+    // this.info = function() {
+    //     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
+    // }
 
-Book.prototype.toggleRead = function(){
-    this.read = this.read === "Read" ? "Not Read" : "Read";
+
+    toggleRead(){
+        this.read = this.read === "Read" ? "Not Read" : "Read";
+    }
 }
 
 
